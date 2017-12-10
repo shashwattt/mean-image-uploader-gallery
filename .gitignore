@@ -40,4 +40,4 @@ testem.log
 Thumbs.d
 
 #static uploads
-/uploads/*
+#/uploads/*
