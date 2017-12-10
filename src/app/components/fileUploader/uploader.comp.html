@@ -4,11 +4,11 @@
     .another-file-over-class { border: dotted 3px green; }
 </style>
  
-<div style="margin-left: 40px">
+<div style="margin: 30px 30px">
  
     <div class="row">
  
-        <div class="col-md-9">
+        <div class="col-md-3">
             <br />
             <div ng2FileDrop
                  [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
@@ -21,10 +21,8 @@
             <h4>Select Files</h4>
             <input type="file" mat-raised-button name="photos" ng2FileSelect [uploader]="uploader" multiple  /><br/>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-9" style="margin-bottom: 40px">
+   
+        <div class="col-md-8" style="margin-bottom: 40px">
  
             <h3>Upload queue</h3>
             <p>Queue length: {{ uploader?.queue?.length }}</p>

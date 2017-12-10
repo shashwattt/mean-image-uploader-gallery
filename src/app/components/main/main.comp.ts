@@ -14,7 +14,6 @@ export class Main implements OnInit  {
   updteGalleryItems(){
     this.dataLoading = true;
     console.log('Updating Gallery Items')
-    this.openSnackBar('Updating Gallery Items')
     this._galleryService.getImages()
     .then((resp) => {
       this.fetchItems = resp.obj;
@@ -28,13 +27,6 @@ export class Main implements OnInit  {
   constructor(private _galleryService: GalleryService, private _snackBar: MatSnackBar) {  }
   ngOnInit() {
     this.updteGalleryItems();
-  }
-
-  openSnackBar(msg : string) {
-    if(this._snackBar){
-      this._snackBar.dismiss();
-    }
-    this._snackBar.open(msg)._dismissAfter(1000);
   }
 
   onLinkClick(tabChangeEvent: MatTabChangeEvent): void {

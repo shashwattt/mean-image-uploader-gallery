@@ -21,9 +21,6 @@ export class GalleryItem {
   
   constructor(private _galleryService: GalleryService, private _snackBar: MatSnackBar){}
   openSnackBar(msg : string) {
-    if(this._snackBar){
-      this._snackBar.dismiss();
-    }
     this._snackBar.open(msg)._dismissAfter(2000);
   }
   deleteItem(item){
