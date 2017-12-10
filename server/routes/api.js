@@ -51,4 +51,22 @@ router.delete('/delete/:id',function(req, res, next){
     }); 
  });
 
+router.post('/deleteMultiple/',function(req, res, next){
+    let list = req.body;
+    if(list && list.length>0){
+        var updates = [];
+        list.forEach(function(obj) {
+            var updatePromise = GalleryItem.update({_id: obj}, {$set: {isDeleted: true}});
+            updates.push(updatePromise);
+        });
+        Promise.all(updates).then(function(results){
+            console.log(results);
+            res.status(200).json({
+                status: 'success',
+                obj: results
+            });
+        });
+    }
+});
+
 module.exports = router;

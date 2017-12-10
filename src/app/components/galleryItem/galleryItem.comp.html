@@ -7,5 +7,6 @@
 			
 			<a (click)=deleteItem(item) ><mat-icon>delete_forever</mat-icon></a>
 			<a [href]=DOWNLOAD_API+item.fileName ><mat-icon>file_download</mat-icon></a>
-        </mat-card-actions>
+		</mat-card-actions>
+		<mat-checkbox class="checkbox-style" [(ngModel)]="item.checked"></mat-checkbox>
 </mat-card>

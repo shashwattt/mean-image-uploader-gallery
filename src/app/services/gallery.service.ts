@@ -33,4 +33,19 @@ export class GalleryService {
       return Promise.reject(err);
     });
   }
+
+  //DeleteMultiple
+  deleteMultiple(idList:string[]){
+    console.log('In delete service' + idList)
+    var URL = API_URL + "deleteMultiple/";
+    var body = JSON.stringify(idList);
+    const header = new Headers({'Content-Type':'application/json'});
+    return this.http.post(URL,body,{headers:header})
+    .map((response: Response) => response.json())
+    .toPromise()
+    .catch((err: any) => {
+      console.log(err);
+      return Promise.reject(err);
+    });
+  }
 }

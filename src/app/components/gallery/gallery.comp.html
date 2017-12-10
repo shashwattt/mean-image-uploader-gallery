@@ -1,1 +1,15 @@
-<gallery-item [item]="item" *ngFor="let item of galleryItems"></gallery-item>
+<style>
+	.fab-button { 
+		position: fixed; 
+		bottom: 30px;
+		right: 30px;
+		z-index: 11;
+	}
+</style>
+     
+<div>
+	<button (click)="deleteMultiple()" mat-fab class="fab-button">
+		<mat-icon aria-label="">delete_sweep</mat-icon>
+	</button>   
+	<gallery-item [item]="item" *ngFor="let item of galleryItems"></gallery-item>
+</div>

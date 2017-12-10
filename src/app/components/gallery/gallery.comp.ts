@@ -7,6 +7,7 @@ import { GalleryService } from '../../services/gallery.service';
 })
 
 export class Gallery {
+  constructor(private _galleryService: GalleryService) {  }
   @Input() galleryItems: [
     { 
       fileName:       string;
@@ -17,4 +18,37 @@ export class Gallery {
       _id:            string;
     }
   ];
+
+  deleteMultiple(){
+    let deleteList:string[]=[];
+    this.galleryItems.forEach(function(item:any) {
+      if(item.checked){
+        deleteList.push(item._id);
+      }
+    });
+
+    if(deleteList && deleteList.length<1){
+      alert("Please select atleast one item");
+      return;
+    }else{
+      console.log('Going to delete',deleteList)
+      this._galleryService.deleteMultiple(deleteList)
+      .then((resp) => {
+       //TODO
+       console.log(resp);
+       if(resp.status=='success'){
+        this.galleryItems.forEach(function(item:any) {
+          if(deleteList.indexOf(item._id) > -1){
+            item.isDeleted = true;
+            item.checked = false;
+          }
+        });
+       }
+       deleteList = [];
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+  }
 }
