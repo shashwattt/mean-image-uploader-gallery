@@ -1,0 +1,11 @@
+<mat-card class="image-card" *ngIf="!item.isDeleted">
+		<mat-card-header>
+			<mat-card-title>{{fromattedName(item.fileName)}}</mat-card-title>
+		</mat-card-header>
+        <a href={{item.filePath}}><img src="{{item.filePath}}" alt="model" class="model-image"></a>
+        <mat-card-actions>
+			
+			<a (click)=deleteItem(item) ><mat-icon>delete_forever</mat-icon></a>
+			<a [href]=DOWNLOAD_API+item.fileName ><mat-icon>file_download</mat-icon></a>
+        </mat-card-actions>
+</mat-card>

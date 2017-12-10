@@ -1,0 +1,50 @@
+.image-card{
+    height: 220px;
+    width: 200px;
+    display: inline-block;
+    margin: 15px;
+    padding: 0;
+    padding-top: 2px;
+}
+
+.model-image{
+    height:150px;
+    width:150px;
+}
+
+.mat-card-actions {
+    margin-left: 0; 
+    margin-right: 0;
+    padding: 4px 0;
+}
+.mat-icon{
+    margin: 4px;
+    float: right;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: .9em;
+    margin: 4px;
+
+}
+
+a :hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 450px) {
+    .image-card{
+        align-items: center;
+        width : 120px;
+        height: 100px;
+    }
+
+    .model-image{
+        margin-top: 4px;
+        height:60px;
+        width:60px;
+    }
+    .mat-card-header{
+        display: none;
+    }
+}

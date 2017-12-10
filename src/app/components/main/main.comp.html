@@ -1,0 +1,7 @@
+<mat-tab-group dynamicHeight=true (selectedTabChange)="onLinkClick($event)">
+	<mat-tab label="Gallery">
+		<gallery-view [galleryItems]="fetchItems" *ngIf="!dataLoading"></gallery-view>
+		<mat-progress-bar mode="indeterminate" color="primary" bufferValue="0" *ngIf="dataLoading"></mat-progress-bar>
+	</mat-tab>
+	<mat-tab label="Uploader"><file-uploader></file-uploader></mat-tab>
+</mat-tab-group>    
