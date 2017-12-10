@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GalleryService } from '../../services/gallery.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'gallery-item',
@@ -18,14 +19,21 @@ export class GalleryItem {
     _id:            string;
   };
   
-  constructor(private _galleryService: GalleryService){}
-  
+  constructor(private _galleryService: GalleryService, private _snackBar: MatSnackBar){}
+  openSnackBar(msg : string) {
+    if(this._snackBar){
+      this._snackBar.dismiss();
+    }
+    this._snackBar.open(msg)._dismissAfter(2000);
+  }
   deleteItem(item){
+    this.openSnackBar('Deleting image ' + item.fileName);
     console.log('Deleting ', item._id);
     this._galleryService.deleteImage(item._id)
     .then((resp) => {
       if(resp.status=='success'){
         item.isDeleted = true;
+        this.openSnackBar('Successfully deleted image ' + item.fileName);
       }
     })
     .catch((err) => {
@@ -34,10 +42,7 @@ export class GalleryItem {
   }
 
   fromattedName(name:string){
-
     if(name.length>20){
-      console.log(name)
-      console.log(name.length)
       name = name.substring(0,20)+'...';
     }
     return name;

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 var GalleryItem = require('../models/galleryItem');
 
-/* GET api listing. */
 router.get('/', (req, res) => {
   console.log("Get All Records")
   GalleryItem.find()

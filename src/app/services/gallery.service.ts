@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 
-const API_URL = 'http://localhost:3030/api/';
+const API_URL = '/api/';
 @Injectable()
 export class GalleryService {
   

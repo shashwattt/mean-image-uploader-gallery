@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryService } from '../../services/gallery.service';
-import { MatTabChangeEvent } from '@angular/material';
+import { MatTabChangeEvent, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'main-view',
@@ -13,7 +13,8 @@ export class Main implements OnInit  {
   dataLoading : boolean;
   updteGalleryItems(){
     this.dataLoading = true;
-    console.log('In updteGalleryItems')
+    console.log('Updating Gallery Items')
+    this.openSnackBar('Updating Gallery Items')
     this._galleryService.getImages()
     .then((resp) => {
       this.fetchItems = resp.obj;
@@ -24,9 +25,16 @@ export class Main implements OnInit  {
     });
   }
 
-  constructor(private _galleryService: GalleryService) {  }
+  constructor(private _galleryService: GalleryService, private _snackBar: MatSnackBar) {  }
   ngOnInit() {
     this.updteGalleryItems();
+  }
+
+  openSnackBar(msg : string) {
+    if(this._snackBar){
+      this._snackBar.dismiss();
+    }
+    this._snackBar.open(msg)._dismissAfter(1000);
   }
 
   onLinkClick(tabChangeEvent: MatTabChangeEvent): void {
