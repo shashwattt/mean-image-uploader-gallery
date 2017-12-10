@@ -33,7 +33,7 @@ This project is made for learning and testing.
 ```
 
 ### To run locally
-Run `` npm start. Navigate to `http://localhost:3030/`. The app will automatically reload if you change any of the source files.
+Run `npm start`. Navigate to `http://localhost:3030/`. The app will automatically reload if you change any of the source files.
 
 ### For development
 
