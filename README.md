@@ -20,13 +20,13 @@ This project is made for learning and testing.
 
 
 ### Usage
-1. Clone it to your prefered location 
+Clone it to your prefered location 
 
 ```
  git clone https://github.com/shashwattt/mean-image-uploader-gallery.git <directory_name> --depth=1
  cd <directory_name>
 ```
-2. Download dependencies
+Download dependencies
 
 ```
  npm install
