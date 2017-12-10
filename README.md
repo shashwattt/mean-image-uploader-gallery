@@ -23,7 +23,7 @@ This project is made for learning and testing.
 1. Clone it to your prefered location 
 
 ```
- git clone https://github.com/kiranchowdhury/ng-ui-framework.git <directory_name> --depth=1
+ git clone https://github.com/shashwattt/mean-image-uploader-gallery.git <directory_name> --depth=1
  cd <directory_name>
 ```
 2. Download dependencies
