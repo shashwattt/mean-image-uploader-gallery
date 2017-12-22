@@ -4,6 +4,8 @@ This project is initiatilly generated from [angular-cli](https://github.com/angu
 Integrated with [express](https://expressjs.com/) and [mongodb library](http://mongoosejs.com/) and [Angular Material](https://material.angular.io/). 
 It uses [ng2-file-upload](https://github.com/valor-software/ng2-file-upload/) to send files to server and [multer](https://github.com/expressjs/multer) for handling files at server side.
 
+Hosted on [AWS EC2](https://aws.amazon.com/ec2/) instance - [View Running Application](http://ec2-13-127-10-201.ap-south-1.compute.amazonaws.com:3030/)
+
 This project is made for learning and testing.
 
 ## Features
